@@ -1,6 +1,6 @@
 Name: Steven Tan  
 Team Name: Steven Tan  
 Things to add:  
-1. shading (gouraud + phong)
-2. multiple lights
+1. multiple lights
+2. Using vary to move lights
 
