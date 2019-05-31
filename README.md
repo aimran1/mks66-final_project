@@ -1,4 +1,6 @@
-# mks66-final_project
+Name: Steven Tan
+Team Name: Steven Tan
 Things to add:
-1. mesh files (.obj)
-2. shading (gouraud + phong)
+1. shading (gouraud + phong)
+2. multiple lights
+
