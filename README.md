@@ -2,4 +2,4 @@ Name: Steven Tan
 Team Name: Steven Tan  
 Things to add:  
 1. shading (gouraud + phong)
-2. mesh (.obj file)
+2. mesh (.obj file) {only for triangle faces :)}
