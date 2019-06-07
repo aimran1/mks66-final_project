@@ -207,18 +207,19 @@ def run(filename):
 				
 			elif c == 'mesh':
 				reflect = '.white'
-				parse_mesh(tmp, args[0]+'.obj')
-				print tmp
+				parse_mesh(tmp, args[0]+'.obj') #function located in draw.py
 				matrix_mult(stack[-1],tmp)
 				draw_polygons(tmp, screen, zbuffer, view, ambient, light, symbols, reflect)
 				tmp = []
 				reflect = '.white'
-		save_extension(screen,"./anim/"+name+("0"*(len(str(num_frames))-len(str(cur)))+str(cur)))
-		tmp = new_matrix()
-		ident(tmp)
-		stack = [[x[:] for x in tmp]]
-		screen = new_screen()
-		zbuffer = new_zbuffer()
-		cur += 1
-    make_animation(name)		
+		if num_frames != 1:
+			save_extension(screen,"./anim/"+name+("0"*(len(str(num_frames))-len(str(cur)))+str(cur)))
+			tmp = new_matrix()
+			ident(tmp)
+			stack = [[x[:] for x in tmp]]
+			screen = new_screen()
+			zbuffer = new_zbuffer()
+			cur += 1
+    if num_frames != 1:
+		make_animation(name)		
 			# end operation loop

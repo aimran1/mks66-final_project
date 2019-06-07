@@ -9,28 +9,31 @@ def parse_mesh(polygons,filename):
   lines = f.read().split("\n")
   for line in lines:
     l = line.split(" ")
+    #gets the list of verticies
     if l[0] == 'v':
       theList = []
       for i in range(1,len(l)):
         if l[i] != "" and l[i] != " ":
           theList.append(l[i])
       verticies.append(theList)
+    #gets the list of faces
     elif l[0] == 'f':
       theList = []
       for i in range(1,len(l)):
         if l[i] != "" and l[i] != " ":
           theList.append(l[i])
       faces.append(theList)
-  print verticies
-  print faces
   for face in faces:
     points = []
     for vertex in range(3):
       points.append(float(verticies[int(face[vertex])-1][0]))
       points.append(float(verticies[int(face[vertex])-1][1]))
       points.append(float(verticies[int(face[vertex])-1][2]))
-    add_polygon(polygons, points[0], points[1], points[2], 
+                             #x0         y0        z0
+    add_polygon(polygons, points[0], points[1], points[2],
+                             #x1         y1        z1
                           points[3], points[4], points[5],
+                             #x2         y2        z2
                           points[6], points[7], points[8],)
         
 def draw_scanline(x0, z0, x1, z1, y, screen, zbuffer, color):
